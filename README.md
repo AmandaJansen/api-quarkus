@@ -13,22 +13,22 @@ Este projeto utiliza Quarkus, o Java Framework. O projeto consiste em um sistema
 
 # Endpoints
 
-### GET /contacorrente/contas
+#### GET /contacorrente/contas
 Retorna uma lista de todas as contas correntes no formato de texto.
-### POST /contacorrente/criarConta
 
+#### POST /contacorrente
 Cria uma nova conta corrente. Requer parâmetros nome e cpf no corpo da solicitação.
 
-### POST /contacorrente/sacar
+#### POST /contacorrente/sacar
 Realiza um saque em uma conta corrente. Requer parâmetros numeroConta e valor no corpo da solicitação.
 
-### PATCH /contacorrente/transferir
+#### PATCH /contacorrente/transferir
 Realiza uma transferência entre duas contas correntes. Requer parâmetros contaOrigem, contaDestino e valor no corpo da solicitação.
 
-### POST /contacorrente/depositar
+#### POST /contacorrente/depositar
 Realiza um depósito em uma conta corrente. Requer parâmetros numeroConta e valor no corpo da solicitação.
 
-### DELETE /contacorrente/excluir
+#### DELETE /contacorrente/deletar
 Exclui uma conta corrente. Requer parâmetro numeroConta no corpo da solicitação.
 
 # Como Executar
