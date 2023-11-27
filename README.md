@@ -1,56 +1,49 @@
 # code-with-quarkus
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+Este projeto utiliza Quarkus, o Java Framework. O projeto consiste em um sistema bancário simples com conceitos sobre API RESTful. O sistema permite a criação de contas correntes, depósitos, saques, transferências, exclusão e listagem de contas.
 
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+# Estrutura do Projeto
+**org.acme:** Pacote contendo a classe ContaBancoResource, que define os endpoints da API.
 
-## Running the application in dev mode
+**services:** Pacote contendo a implementação do serviço ContaCorrenteServiceImpl, que fornece as operações bancárias.
 
-You can run your application in dev mode that enables live coding using:
+**models:** Pacote contendo as classes de modelo Cliente, ContaBancaria e ContaCorrente.
+
+**GlobalExceptionHandler:** Pacote contendo as exceções personalizadas ContaInvalidaException e SaldoInsuficienteException para tratamento global de exceções na API.
+
+# Endpoints
+
+#### GET /contacorrente/contas
+Retorna uma lista de todas as contas correntes no formato de texto.
+
+#### POST /contacorrente
+Cria uma nova conta corrente. Requer parâmetros nome e cpf no corpo da solicitação.
+
+#### POST /contacorrente/sacar
+Realiza um saque em uma conta corrente. Requer parâmetros numeroConta e valor no corpo da solicitação.
+
+#### PATCH /contacorrente/transferir
+Realiza uma transferência entre duas contas correntes. Requer parâmetros contaOrigem, contaDestino e valor no corpo da solicitação.
+
+#### POST /contacorrente/depositar
+Realiza um depósito em uma conta corrente. Requer parâmetros numeroConta e valor no corpo da solicitação.
+
+#### DELETE /contacorrente/deletar
+Exclui uma conta corrente. Requer parâmetro numeroConta no corpo da solicitação.
+
+# Como Executar
+Certifique-se de ter o Java instalado em sua máquina.
+Compile e execute o projeto utilizando a sua IDE de escolha.
+Os endpoints da API estarão disponíveis em http://localhost:8080/.
+
+
+## Executando a aplicação em dev mode
 ```shell script
 ./mvnw compile quarkus:dev
 ```
-
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
-
-## Packaging and running the application
-
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
-
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
-
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
-
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
-
-## Creating a native executable
-
-You can create a native executable using: 
-```shell script
-./mvnw package -Dnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-You can then execute your native executable with: `./target/code-with-quarkus-1.0.0-SNAPSHOT-runner`
-
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
-
-## Provided Code
 
 ### RESTEasy Reactive
 
 Easily start your Reactive RESTful Web Services
 
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+[Sessão para guia relacionado...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
