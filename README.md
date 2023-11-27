@@ -14,7 +14,7 @@ Este projeto utiliza Quarkus, o Java Framework. O projeto consiste em um sistema
 # Endpoints
 
 #### GET /contacorrente/contas
-Retorna uma lista de todas as contas correntes no formato de texto.
+Retorna uma lista de todas as contas correntes no formato Json.
 
 #### POST /contacorrente
 Cria uma nova conta corrente. Requer parâmetros nome e cpf no corpo da solicitação.
