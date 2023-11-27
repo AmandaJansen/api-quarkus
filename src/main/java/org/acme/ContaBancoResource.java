@@ -18,8 +18,8 @@ public class ContaBancoResource {
     ContaCorrenteService correnteService = new ContaCorrenteServiceImpl(contaCorrentes);
     ContaCorrente contaCorrente;
 
+    //lista contas cadastradas
     @GET
-    @Path("/contas")
     @Produces(MediaType.APPLICATION_JSON)
 
     public List<String> listaContas() {
@@ -34,7 +34,7 @@ public class ContaBancoResource {
 
         return dadosContas;
     }
-
+//cadastra contas
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
