@@ -34,7 +34,7 @@ Exclui uma conta corrente. Requer parâmetro numeroConta no corpo da solicitaç�
 # Como Executar
 Certifique-se de ter o Java instalado em sua máquina.
 Compile e execute o projeto utilizando a sua IDE de escolha.
-Os endpoints da API estarão disponíveis em http://localhost:8080/.
+Os endpoints da API estarão disponíveis em http://localhost:8080/api/v1.
 
 
 ## Executando a aplicação em dev mode
